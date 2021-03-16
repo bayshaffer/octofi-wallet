@@ -109,7 +109,7 @@ export default class UnlockPage extends Component {
 
   renderSubmitButton() {
     const style = {
-      backgroundColor: '#f7861c',
+      backgroundColor: '#68d3d9',
       color: 'white',
       marginTop: '20px',
       height: '60px',
@@ -143,7 +143,7 @@ export default class UnlockPage extends Component {
       <div className="unlock-page__container">
         <div className="unlock-page">
           <div className="unlock-page__mascot-container">
-            <img src="/images/icon-128.png" alt="" />
+            <img src="/images/hero.png" alt="" />
           </div>
           <h1 className="unlock-page__title">{t('welcomeBack')}</h1>
           <div>{t('unlockMessage')}</div>

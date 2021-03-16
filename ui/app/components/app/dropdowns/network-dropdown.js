@@ -277,9 +277,6 @@ class NetworkDropdown extends Component {
             {this.context.t('networks')}
           </div>
           <div className="network-dropdown-divider" />
-          <div className="network-dropdown-content">
-            {this.context.t('defaultNetwork')}
-          </div>
         </div>
         {this.renderNetworkEntry('mainnet')}
         {this.renderNetworkEntry('ropsten')}
