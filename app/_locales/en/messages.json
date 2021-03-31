@@ -183,6 +183,9 @@
   "assets": {
     "message": "Assets"
   },
+  "collectibles": {
+    "message": "Collectibles"
+  },
   "attemptToCancel": {
     "message": "Attempt to Cancel?"
   },
