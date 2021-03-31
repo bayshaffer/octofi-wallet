@@ -19,12 +19,16 @@ export default function IntroPopup({ onClose }) {
     properties: { source: 'Intro popup', active_currency: 'ETH' },
     category: 'swaps',
   });
-  const blogPostVisitedEvent = useNewMetricEvent({
-    event: 'Blog Post Visited ',
+  const dyorVisitedEvent = useNewMetricEvent({
+    event: 'DYOR Visited ',
     category: 'swaps',
   });
-  const contractAuditVisitedEvent = useNewMetricEvent({
-    event: 'Contract Audit Visited',
+  const fiatOnrampVisitedEvent = useNewMetricEvent({
+    event: 'Fiat Onramp Visited',
+    category: 'swaps',
+  });
+  const referralPartnersVisitedEvent = useNewMetricEvent({
+    event: 'Referral Partners Visited',
     category: 'swaps',
   });
   const productOverviewDismissedEvent = useNewMetricEvent({
@@ -61,7 +65,7 @@ export default function IntroPopup({ onClose }) {
       >
         <div className="intro-popup__content">
           <div className="intro-popup__liquidity-sources-label">
-            {t('swapIntroLiquiditySourcesLabel')}
+            {t('swapIntroMarketplacesLabel')}
           </div>
           <div className="intro-popup__source-logo-container">
             <img src="images/source-logos-all.svg" alt="" />
@@ -73,10 +77,9 @@ export default function IntroPopup({ onClose }) {
             className="intro-popup__learn-more-link"
             onClick={() => {
               global.platform.openTab({
-                url:
-                  'https://medium.com/metamask/introducing-metamask-swaps-84318c643785',
+                url: 'https://dyor.octo.fi/',
               });
-              blogPostVisitedEvent();
+              dyorVisitedEvent();
             }}
           >
             {t('swapIntroLearnMoreLink')}
@@ -85,13 +88,23 @@ export default function IntroPopup({ onClose }) {
             className="intro-popup__learn-more-link"
             onClick={() => {
               global.platform.openTab({
-                url:
-                  'https://diligence.consensys.net/audits/private/lsjipyllnw2/',
+                url: 'https://app.octo.fi/#/fiat/on',
               });
-              contractAuditVisitedEvent();
+              fiatOnrampVisitedEvent();
             }}
           >
-            {t('swapLearnMoreContractsAuditReview')}
+            {t('swapBuyEth')}
+          </div>
+          <div
+            className="intro-popup__learn-more-link"
+            onClick={() => {
+              global.platform.openTab({
+                url: 'https://octo.fi/partners',
+              });
+              referralPartnersVisitedEvent();
+            }}
+          >
+            {t('browseReferralPartners')}
           </div>
         </div>
       </Popover>
